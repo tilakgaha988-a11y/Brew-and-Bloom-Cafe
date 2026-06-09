@@ -1,4 +1,4 @@
-# Brew & Bloom Café — CET138 Full Stack Development Assignment 1
+# Brew & Bloom Café 
 
 ## Project Overview
 A responsive café website built to demonstrate understanding of:
@@ -28,7 +28,7 @@ cafe-website/
 │   ├── gallery.js      ← Lightbox modal population
 │   └── contact.js      ← Form validation and submission
 │
-└── images/             ← Add your own photos here (see instructions below)
+└── images/             ← photos here 
     └── README.txt
 ```
 
