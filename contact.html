@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brew & Bloom Cafe</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <i class="bi bi-cup-hot-fill"></i> Brew &amp; Bloom
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link active" href="contact.html">Book a Table</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <header class="page-header">
+    <div class="container text-center">
+      <span class="section-eyebrow">Reserve Your Spot</span>
+      <h1 class="page-header-title">Book a Table</h1>
+      <p>We'd love to have you. Fill in the form and we'll confirm within 2 hours.</p>
+    </div>
+  </header>
+
+  <!-- BOOKING FORM + INFO -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-5 justify-content-center">
+
+        <!-- Form Column -->
+        <div class="col-lg-7">
+          <div class="form-card">
+            <h3 class="form-card-title">Your Booking Details</h3>
+
+            <!-- Success Alert (hidden by default, shown via JS) -->
+            <div class="alert alert-success d-none" id="successAlert" role="alert">
+              <i class="bi bi-check-circle-fill me-2"></i>
+              <strong>Booking confirmed!</strong> We'll send a reminder to your email.
+            </div>
+
+            <form id="bookingForm" novalidate>
+
+              <div class="row g-3">
+
+                <div class="col-sm-6">
+                  <label for="firstName" class="form-label">First name <span class="required-star">*</span></label>
+                  <input type="text" class="form-control" id="firstName" placeholder="Tilak" required />
+                  <div class="invalid-feedback">Please enter your first name.</div>
+                </div>
+
+                <div class="col-sm-6">
+                  <label for="lastName" class="form-label">Last name <span class="required-star">*</span></label>
+                  <input type="text" class="form-control" id="lastName" placeholder="Gaha" required />
+                  <div class="invalid-feedback">Please enter your last name.</div>
+                </div>
+
+                <div class="col-sm-6">
+                  <label for="email" class="form-label">Email address <span class="required-star">*</span></label>
+                  <input type="email" class="form-control" id="email" placeholder="tilak@example.com" required />
+                  <div class="invalid-feedback">Please enter a valid email address.</div>
+                </div>
+
+                <div class="col-sm-6">
+                  <label for="phone" class="form-label">Phone number <span class="required-star">*</span></label>
+                  <input type="tel" class="form-control" id="phone" placeholder="+977 98XXXXXXXX" required />
+                  <div class="invalid-feedback">Please enter your phone number.</div>
+                </div>
+
+                <div class="col-sm-6">
+                  <label for="date" class="form-label">Date <span class="required-star">*</span></label>
+                  <input type="date" class="form-control" id="date" required />
+                  <div class="invalid-feedback">Please select a date.</div>
+                </div>
+
+                <div class="col-sm-6">
+                  <label for="time" class="form-label">Time <span class="required-star">*</span></label>
+                  <select class="form-select" id="time" required>
+                    <option value="" disabled selected>Select a time</option>
+                    <option>7:00 am</option>
+                    <option>8:00 am</option>
+                    <option>9:00 am</option>
+                    <option>10:00 am</option>
+                    <option>11:00 am</option>
+                    <option>12:00 pm</option>
+                    <option>1:00 pm</option>
+                    <option>2:00 pm</option>
+                    <option>3:00 pm</option>
+                    <option>4:00 pm</option>
+                    <option>5:00 pm</option>
+                    <option>6:00 pm</option>
+                    <option>7:00 pm</option>
+                    <option>8:00 pm</option>
+                  </select>
+                  <div class="invalid-feedback">Please select a time.</div>
+                </div>
+
+                <div class="col-sm-6">
+                  <label for="guests" class="form-label">Number of guests <span class="required-star">*</span></label>
+                  <select class="form-select" id="guests" required>
+                    <option value="" disabled selected>Select</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6+</option>
+                  </select>
+                  <div class="invalid-feedback">Please select the number of guests.</div>
+                </div>
+
+                <div class="col-sm-6">
+                  <label for="occasion" class="form-label">Occasion (optional)</label>
+                  <select class="form-select" id="occasion">
+                    <option value="" selected>None</option>
+                    <option>Birthday</option>
+                    <option>Anniversary</option>
+                    <option>Business meeting</option>
+                    <option>Casual catch-up</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+
+                <div class="col-12">
+                  <label for="notes" class="form-label">Special requests (optional)</label>
+                  <textarea class="form-control" id="notes" rows="3" placeholder="Dietary requirements, accessibility needs, seating preferences..."></textarea>
+                </div>
+
+                <!-- Live character counter (JavaScript feature) -->
+                <div class="col-12">
+                  <small class="text-muted" id="charCount">0 / 300 characters</small>
+                </div>
+
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="terms" required />
+                    <label class="form-check-label" for="terms">
+                      I agree to the <a href="#" class="link-accent">booking terms</a> and cancellation policy. <span class="required-star">*</span>
+                    </label>
+                    <div class="invalid-feedback">You must agree before booking.</div>
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <button type="submit" class="btn btn-primary btn-lg w-100" id="submitBtn">
+                    <i class="bi bi-calendar-check me-2"></i>Confirm Booking
+                  </button>
+                </div>
+
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Info Sidebar -->
+        <div class="col-lg-4">
+          <div class="info-sidebar">
+            <h4 class="mb-4">Good to know</h4>
+
+            <div class="sidebar-item">
+              <i class="bi bi-clock sidebar-icon"></i>
+              <div>
+                <strong>Opening Hours</strong>
+                <p>Mon–Fri: 7 am – 9 pm<br>Sat: 8 am – 10 pm<br>Sun: 9 am – 8 pm</p>
+              </div>
+            </div>
+
+            <div class="sidebar-item">
+              <i class="bi bi-people sidebar-icon"></i>
+              <div>
+                <strong>Group Bookings</strong>
+                <p>For groups of 7 or more, please call us directly on +977 01-4XXXXXX.</p>
+              </div>
+            </div>
+
+            <div class="sidebar-item">
+              <i class="bi bi-x-circle sidebar-icon"></i>
+              <div>
+                <strong>Cancellations</strong>
+                <p>Cancel up to 2 hours before your booking at no charge.</p>
+              </div>
+            </div>
+
+            <div class="sidebar-item">
+              <i class="bi bi-geo-alt sidebar-icon"></i>
+              <div>
+                <strong>Address</strong>
+                <p>Opposite of Hotel Pauwa, Tilottama<br>Butwal, Nepal 32907</p>
+              </div>
+            </div>
+
+            <div class="sidebar-item">
+              <i class="bi bi-envelope sidebar-icon"></i>
+              <div>
+                <strong>Email Us</strong>
+                <p><a href="mailto:hello@brewandbloom.com" class="link-accent">hello@brewandbloom.com</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer py-4">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-4 mb-3 mb-md-0">
+          <span class="footer-brand"><i class="bi bi-cup-hot-fill"></i> Brew &amp; Bloom</span>
+        </div>
+        <div class="col-md-4 text-center mb-3 mb-md-0">
+          <nav class="footer-nav">
+            <a href="index.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Book</a>
+          </nav>
+        </div>
+        <div class="col-md-4 text-md-end">
+          <a href="#" class="footer-social" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="footer-social" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="footer-social" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+        </div>
+      </div>
+      <hr class="footer-hr" />
+      <p class="footer-copy text-center mb-0">&copy; 2025 Brew &amp; Bloom Café. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/contact.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
